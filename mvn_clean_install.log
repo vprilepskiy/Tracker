@@ -1,0 +1,52 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building tracker 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ tracker ---
+[INFO] Deleting C:\projects\Tracker\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ tracker ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\projects\Tracker\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ tracker ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to C:\projects\Tracker\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ tracker ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\projects\Tracker\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ tracker ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\projects\Tracker\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ tracker ---
+[INFO] Surefire report directory: C:\projects\Tracker\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running ru.job4j.start.TrackerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.092 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ tracker ---
+[INFO] Building jar: C:\projects\Tracker\target\tracker-1.0.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ tracker ---
+[INFO] Installing C:\projects\Tracker\target\tracker-1.0.jar to C:\Users\VLADIMIR\.m2\repository\ru\job4j\tracker\1.0\tracker-1.0.jar
+[INFO] Installing C:\projects\Tracker\pom.xml to C:\Users\VLADIMIR\.m2\repository\ru\job4j\tracker\1.0\tracker-1.0.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 4.559 s
+[INFO] Finished at: 2016-12-14T21:16:36+05:00
+[INFO] Final Memory: 17M/122M
+[INFO] ------------------------------------------------------------------------
