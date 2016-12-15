@@ -24,7 +24,7 @@ import static org.junit.Assert.assertThat;
 	String[] id = new String[countRows];
 
 	/**
-	 * Test.
+	 * Предварительная настройка.
 	 */
 	@Before
 	public void testAdd() {
@@ -35,7 +35,7 @@ import static org.junit.Assert.assertThat;
 			create[i] = item.getCreate();
 			id[i] = item.getId();
 			final String result = i + " name";
-			assertThat(item.getName(), is(result));
+//			assertThat(item.getName(), is(result));
 		}
 	}
 
@@ -49,6 +49,11 @@ import static org.junit.Assert.assertThat;
 		assertThat(item.getName(), is(result));
 	}
 
+	@Test
+	public void testDel() {
+		assertThat(tracker.del(item), is(true));
+	}
+	
 	/**
 	 * Test.
 	 */
@@ -73,4 +78,38 @@ import static org.junit.Assert.assertThat;
 	public void testFindByName() {
 		assertThat(tracker.findByName(this.name[1]).getName(), is("1 name"));
 	}
+	
+	/**
+	 * Test.
+	 */
+	@Test
+	public void testFindByDescription() {
+		assertThat(tracker.findByDescription(this.description[1]).getDescription(), is("1 desc"));
+	}
+	
+	/**
+	 * Test.
+	 */
+	@Test
+	public void testFindByCreate() {
+		assertThat(tracker.findByCreate(this.create[0]).getName(), is("0 name"));
+	}
+	
+	/**
+	 * Test.
+	 */
+	@Test
+	public void testGetAll() {
+		Item items[] = tracker.getAll();
+		boolean success = true;
+		int index = 0;
+		for (Item item : items) {
+			if (item.getId() != id[index]) {
+				success = false;
+				break;
+			}
+			index++;
+		}
+		assertThat(success, is(true));
+	}	
 }
