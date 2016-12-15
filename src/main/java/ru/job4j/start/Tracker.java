@@ -14,7 +14,7 @@ public class Tracker {
 	/**
 	 * массив заявок.
 	 */
-	private Item[] items = new Item[10];
+	private Item[] items = new Item[1000];
 	/**
 	 * позиция в массиве последнй заявки.
 	 */

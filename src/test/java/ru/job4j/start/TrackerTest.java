@@ -2,6 +2,7 @@ package ru.job4j.start;
 
 import ru.job4j.models.*;
 import org.junit.Test;
+import org.junit.Before;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -34,7 +35,7 @@ import static org.junit.Assert.assertThat;
 			create[i] = item.getCreate();
 			id[i] = item.getId();
 			final String result = i + " name";
-//			assertThat(item.getName(), is(result));
+			assertThat(item.getName(), is(result));
 		}
 	}
 
