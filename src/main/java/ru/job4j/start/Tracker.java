@@ -36,31 +36,18 @@ public class Tracker {
 	}
 
 	/**
-	 * Pедактирует имя.
+	 * Редактирует заявку.
 	 * @param item - заявка.
-	 * @param name - новое имя.
 	 * @return - заявка.
 	 */
-	public Item editName(Item item, String name) {
-		if (name != null) {
-			item.setName(name);
-		}
-		return item;
+	public Item update(Item item){
+		Item result = findById(item.getId());
+		result.setName(item.getName());
+		result.setDescription(item.getDescription());
+		result.setCreate(item.getCreate());
+		return result;
 	}
-
-	/**
-	 * Pедактирует описание.
-	 * @param item - заявка.
-	 * @param description - новое описание.
-	 * @return - заявка.
-	 */
-	public Item editDescription(Item item, String description) {
-		if (description != null) {
-			item.setDescription(description);
-		}
-		return item;
-	}
-
+	
 	/**
 	 * Удаляет заявку.
 	 * @param item - заявка.
@@ -96,12 +83,13 @@ public class Tracker {
 	 * @param name - название.
 	 * @return - заявка.
 	 */
-	protected Item findByName(String name) {
-		Item result = null;
+	protected Item[] findByName(String name) {
+		Item[] result = new Item[position];
+		int index = 0;
 		for (Item item : items) {
 			if (item != null && item.getName().equals(name)) {
-				result = item;
-				break;
+				result[index] = item;
+				index++;
 			}
 		}
 		return result;
@@ -112,12 +100,13 @@ public class Tracker {
 	 * @param description - описание.
 	 * @return - заявка.
 	 */
-	protected Item findByDescription(String description) {
-		Item result = null;
+	protected Item[] findByDescription(String description) {
+		Item[] result = new Item[position];
+		int index = 0;
 		for (Item item : items) {
 			if (item != null && item.getDescription().equals(description)) {
-				result = item;
-				break;
+				result[index] = item;
+				index++;
 			}
 		}
 		return result;
@@ -128,16 +117,18 @@ public class Tracker {
 	 * @param create - дата создания.
 	 * @return - заявка.
 	 */
-	protected Item findByCreate(long create) {
-		Item result = null;
+	protected Item[] findByCreate(long create) {
+		Item[] result = new Item[position];
+		int index = 0;
 		for (Item item : items) {
 			if (item != null && item.getCreate() == create) {
-				result = item;
-				break;
+				result[index] = item;
+				index++;
 			}
 		}
 		return result;
 	}
+
 
 	/**
 	 * Генерирует уникальный ключ.

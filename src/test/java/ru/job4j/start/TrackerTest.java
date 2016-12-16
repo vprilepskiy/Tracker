@@ -43,24 +43,19 @@ import static org.junit.Assert.assertThat;
 	 * Test.
 	 */
 	@Test
-	public void testEditName() {
-		tracker.editName(item, "editing name");
-		final String result = "editing name";
-		assertThat(item.getName(), is(result));
+	public void testUpdate() {
+		final String name = "editing name";
+		final String desc = "editing desc";
+		final long create = System.currentTimeMillis();
+		Item newItem = new Item(name, desc, create);
+		newItem.setId(id[3]);
+		tracker.update(newItem);
+		assertThat(newItem.getName(), is(name));
 	}
 
 	@Test
 	public void testDel() {
 		assertThat(tracker.del(item), is(true));
-	}
-	
-	/**
-	 * Test.
-	 */
-	@Test
-	public void testEditDescription() {
-		tracker.editDescription(item, "editing desc");
-		assertThat(item.getDescription(), is("editing desc"));
 	}
 	
 	/**
@@ -76,7 +71,8 @@ import static org.junit.Assert.assertThat;
 	 */
 	@Test
 	public void testFindByName() {
-		assertThat(tracker.findByName(this.name[1]).getName(), is("1 name"));
+		final Item[] result = tracker.findByName(this.name[1]);
+		assertThat(result[0].getName(), is("1 name"));
 	}
 	
 	/**
@@ -84,7 +80,8 @@ import static org.junit.Assert.assertThat;
 	 */
 	@Test
 	public void testFindByDescription() {
-		assertThat(tracker.findByDescription(this.description[1]).getDescription(), is("1 desc"));
+		final Item[] result = tracker.findByDescription(this.description[1]);
+		assertThat(result[0].getDescription(), is("1 desc"));
 	}
 	
 	/**
@@ -92,7 +89,8 @@ import static org.junit.Assert.assertThat;
 	 */
 	@Test
 	public void testFindByCreate() {
-		assertThat(tracker.findByCreate(this.create[0]).getName(), is("0 name"));
+		final Item[] result = tracker.findByCreate(this.create[1]);
+		assertThat(result[0].getCreate(), is(this.create[1]));
 	}
 	
 	/**

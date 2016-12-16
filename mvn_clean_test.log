@@ -30,16 +30,16 @@
  T E S T S
 -------------------------------------------------------
 Running ru.job4j.start.TrackerTest
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.097 sec
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.102 sec
 
 Results :
 
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 4.336 s
-[INFO] Finished at: 2016-12-15T14:21:54+05:00
-[INFO] Final Memory: 15M/135M
+[INFO] Total time: 3.656 s
+[INFO] Finished at: 2016-12-16T20:31:34+05:00
+[INFO] Final Memory: 15M/134M
 [INFO] ------------------------------------------------------------------------
